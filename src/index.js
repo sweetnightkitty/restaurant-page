@@ -1,6 +1,7 @@
 import "./styles.css";
-import { greeting } from "./greeting";
 import { loadHomeContent } from "./greeting";
+import { loadMenuContent } from "./menu";
+import { loadContactContent } from "./contact";
 
 
 const homeBtn = document.querySelector(".btn-home");
@@ -14,15 +15,34 @@ window.addEventListener("load", loadHomeContent());
 //3 event listeners will toggle content
 menuBtn.addEventListener("click", () => {
     //clears the DOM
+    clearDom();
+
     //loads the menu page
+    loadMenuContent();
 });
 
 contactBtn.addEventListener("click", () => {
     //clears the DOM
+    clearDom();
+
     //loads the contact page
+    loadContactContent();
 });
 
 homeBtn.addEventListener("click", () => {
     //clears the DOM
-    //loads the contact page
+    clearDom();
+
+    //loads the home page
+    loadHomeContent();
 });
+
+function clearDom() {
+    const content = document.querySelector("#content");
+
+    //selects whatever container is loaded (home, menu or contact)
+    const container= document.querySelector(".container");
+
+    //removes current container
+    content.removeChild(container);
+}
