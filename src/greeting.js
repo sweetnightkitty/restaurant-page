@@ -1,8 +1,6 @@
 //import img
 import sandwich from "./sandwich.jpeg";
 
-export const greeting = "Hello";
-
 export function loadHomeContent() {
     //Create h1
     const h1 = document.createElement("h1");

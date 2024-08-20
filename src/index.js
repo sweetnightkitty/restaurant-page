@@ -7,8 +7,6 @@ const homeBtn = document.querySelector(".btn-home");
 const menuBtn = document.querySelector(".btn-menu");
 const contactBtn = document.querySelector(".btn-contact");
 
-console.log(greeting);
-
 //Loads the home page
 window.onload(loadHomeContent());
 
