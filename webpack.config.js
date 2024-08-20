@@ -21,4 +21,13 @@ module.exports = {
         template: "./src/template.html",
     }),
   ],
+
+  module: {
+    rules: [
+        {
+            test: /\.html$/i,
+            loader: "html-loader",
+        }
+    ]
+  }
 };
