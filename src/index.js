@@ -8,7 +8,7 @@ const menuBtn = document.querySelector(".btn-menu");
 const contactBtn = document.querySelector(".btn-contact");
 
 //Loads the home page
-window.onload(loadHomeContent());
+window.addEventListener("load", loadHomeContent());
 
 
 //3 event listeners will toggle content
