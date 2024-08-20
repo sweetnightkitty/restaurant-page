@@ -28,12 +28,19 @@ header {
     border-bottom: 1px solid black;
 }
 
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .btn {
     background-color: white;
     border: none;
     font-family: "sodo-sans-bold";
     font-size: 14px;
     font-weight: bold;
+    letter-spacing: 0.1em;
 }
 
 .btn:hover {
@@ -61,6 +68,10 @@ h1 {
     font-family: "sodo-sans-bold";
 }
 
+.box {
+    display: flex;
+    border: 1px solid black;
+}
 footer {
     font-family: "sodo-sans-regular";
     display: flex;
