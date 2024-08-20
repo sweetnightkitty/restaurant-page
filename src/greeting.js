@@ -6,10 +6,11 @@ export function loadHomeContent() {
 
     //Create h1
     const h1 = document.createElement("h1");
-    h1.textContent = "Sara's Sassy Sandwiches";
+    h1.textContent = "Butterfly Coffee Company";
 
     //Create img
     const image = document.createElement("img");
+    image.classList.add("img", "img-home");
     image.src = sandwich;
 
     //Create div text
