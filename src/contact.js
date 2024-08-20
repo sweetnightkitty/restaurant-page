@@ -1,0 +1,18 @@
+export function loadContactContent() {
+    //content is the div that houses page content
+    const content = document.querySelector("#content");
+
+    //Create container div that houses all contact content
+    const container = document.createElement("div");
+    container.classList.add("container", "container-contact");
+
+    //Creates h1
+    const h1 = document.createElement("h1");
+    h1.textContent = "Contact Home!";
+
+    //add h1 to menu container
+    container.appendChild(h1);
+
+    //add menu container to the page content
+    content.appendChild(container);
+};
