@@ -30,15 +30,12 @@ body {
     flex-direction: column;
 }
 
-header {
-    padding: 10px;
-    border-bottom: 1px solid black;
-}
-
 nav {
     display: flex;
     gap: 20px;
     align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .btn-home, .btn-contact, .btn-menu {
