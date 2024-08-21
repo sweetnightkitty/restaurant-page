@@ -47,19 +47,14 @@ nav {
     letter-spacing: 0.1em;
 }
 
-.btn:hover {
+.btn-home:hover, .btn-contact:hover, .btn-menu:hover {
     color: hsl(var(--colorGreenAccentHsl));
 }
-
 
 .img-logo {
     width: 50px;
 }
-/* needs changed now due to logo*/
-.img-home {
-    width: 300px;
-    height: auto;
-}
+
 
 #content {
     flex: 1;
@@ -69,10 +64,26 @@ nav {
 
 }
 
-
 h1 {
     font-family: "sodo-sans-bold";
 }
+
+footer {
+    font-family: "sodo-sans-regular";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* END OF MAIN PAGE CONTENT*/
+
+
+
+
+
+
+/* HOME PAGE CONTENT */
 
 .container-home {
     display: flex;
@@ -92,8 +103,6 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
 }
-
-
 
 .card-one {
     background-color: var(--colorGreenBgd);
@@ -115,6 +124,7 @@ h1 {
     color: var(--colorDarkFont);
 }
 
+/* Styling for the .card-left or .card-right that contain text content */
 .card-one>.card-right, .card-three>.card-right, .card-two>.card-left, .card-four>.card-left {
     padding: 32px 24px;
     justify-content: center;
@@ -131,11 +141,13 @@ h1 {
     text-align: center;
 }
 
+/* Child combinator prevents any styling conflict with menu or contact pages */ 
 .card-text>h2 {
     margin-bottom: 24px;
     font-size: 50px;
 }
 
+/* Child combinator prevents any styling conflict with buttons on menu or contact page*/
 .card-text>button {
     margin-top: 32px;
     padding: 7px 16px;
@@ -148,22 +160,19 @@ h1 {
     font-weight: 600;
 }
 
+/* Card one and two have darker colors so color change for better contrast */
 .card-one button, .card-two button {
     color: white;
     border: 1px solid white;
 }
 
-
-/* margins: below h2 32, above button 24*/
-
+/* Ensures .card-left and .card-right that contain images stay at 50% of vw */ 
 .card-one>.card-left, .card-three>.card-left, .card-two>.card-right, .card-four>.card-right {
     max-width: 50%;
 }
 
-footer {
-    font-family: "sodo-sans-regular";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
+
+/* MENU PAGE CONTENT */
+
+
+/* CONTACT PAGE CONTENT */
