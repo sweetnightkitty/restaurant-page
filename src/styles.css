@@ -7,6 +7,7 @@
     --colorLgtGreenBgd: #97D8B1;
     --colorDarkFont: #1E3932;
     --halfViewWidth: calc(vw / 2);
+    --outerGutterMedium: 2.4rem;
 }
 
 * {
@@ -70,10 +71,11 @@ h1 {
 
 footer {
     font-family: "sodo-sans-regular";
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 16px;
 }
 
 /* END OF MAIN PAGE CONTENT*/
@@ -176,3 +178,41 @@ footer {
 
 
 /* CONTACT PAGE CONTENT */
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    max-width: 720px;
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+}
+
+.container-contact h1 {
+    align-self: baseline;
+    padding-bottom: 4.8rem;
+    font-size: 50px;
+}
+
+.container-contact h2 {
+    font-size: 36px;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    margin: 48px 0;
+}
+
+.text {
+    padding-top: 24px;
+    font-size: 19px;
+}
+
+.text-three-two, .text-three-three, .text-three-four, .text-three-five {
+    margin-top: 1.5em;
+}
+
+/* 1.5em */
