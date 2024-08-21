@@ -1,94 +1,99 @@
-//import img
+//image src files for cards
 import cardOneImage from "./box-one-image.jpeg";
 import cardTwoImage from "./box-two-image.jpeg";
 import cardThreeImage from "./box-three-image.jpeg";
 import cardFourImage from "./box-four-image.jpeg";
 
-export function loadHomeContent() {
-    const content = document.querySelector("#content");
+export function loadHomeContent(content) {
 
-    //Create container div that houses all home content
-    const containerHome = document.createElement("div");
-    containerHome.classList.add("container", "container-home");
+    //containerHome will house all of the home page content
+    const containerHome = createDivWithTwoClasses("container", "container-home");
 
-    //Make Home cards
+    //Home page content consists of four cards
     const one = makeCard("one");
     const two = makeCard("two");
     const three = makeCard("three");
     const four = makeCard("four");
 
-    //Add home cards to the home container
     containerHome.appendChild(one);
     containerHome.appendChild(two);
     containerHome.appendChild(three);
     containerHome.appendChild(four);
 
-    //Add home container to the content div
+    //content is referenced from index.js - the div that houses the live page content
     content.appendChild(containerHome);
 };
 
-//Creates Home cards and populates it with appropriate content
+//Creates Home card, with left & right divs and sets text content and image to the appropriate side.
 function makeCard(number) {
 
+    const card = createDivWithTwoClasses("card", `card-${number}`);
+    const cardLeft = createDivWithTwoClasses("card", "card-left");
+    const cardRight = createDivWithTwoClasses("card", "card-right");
 
-    const div = document.createElement("div");
-    div.classList.add("card",`card-${number}`);
-
-    const left = document.createElement("div");
-    left.classList.add("card", "card-left");
-
-    const right = document.createElement("div");
-    right.classList.add("card", "card-right");
-
-    //logic to know which side to add text to
-    if(number == "one" || number == "three") {
-        //text goes on right
-        if(number == "one") {
-            const titleContent = "Our treat to you"
-            const textContent = "Join Butterfly Coffee Rewards and savor our gift to you: a free drink with qualifying purchase during your first week. Valid for one-time use.*";
-            const btnContent = "Join now";
-            setText(right, titleContent, textContent, btnContent);
-            getImage(left, number);
-        } else if(number == "three") {
-            const titleContent = "Here's an A+ gift";
-            const textContent = "Celebrate back to school by sending your favorite students, parents and school staff members a Butterfly Coffee eGift.";
-            const btnContent = "Send an eGift";
-            setText(right, titleContent, textContent, btnContent);
-            getImage(left, number);
-        };
-    } else if(number == "two" || number == "four") {
-        //text goes on left
-        if(number == "two") {
-            const titleContent = "Sunny-day essentials";
-            const textContent = "Flavorful creations sure to brighten any summer day.";
-            const btnContent = "Order now";
-            setText(left, titleContent, textContent, btnContent);
-            getImage(right, number);
-        } else if(number == "four") {
-            const titleContent = "Personal cups for good";
-            const textContent = "Your choice is a positive and responsible one-because bringing your clean reusable cup helps our planet.";
-            const btnContent = "Learn more";
-            setText(left, titleContent, textContent, btnContent);
-            getImage(right, number);
-        };
+    //values 0-3 provide index values for the storedContent array
+    if(number == "one") {
+        setText(cardRight, 0);
+        getImage(cardLeft, number, cardOneImage);
+    } else if(number == "two") {
+        setText(cardLeft, 1);
+        getImage(cardRight, number, cardTwoImage);
+    } else if(number == "three") {
+        setText(cardRight, 2);
+        getImage(cardLeft, number, cardThreeImage);
+    } else if(number == "four") {
+        setText(cardLeft, 3);
+        getImage(cardRight, number, cardFourImage);
     };
 
-    div.appendChild(left);
-    div.appendChild(right);
+    card.appendChild(cardLeft);
+    card.appendChild(cardRight);
 
-    return div;
+    return card;
 
 }
 
-//Generate text
-function setText(div, titleContent, textContent, btnContent) {
-    //create h2
+//Retrieves text from storedContent array based on parameter index, and appends to the left or right side of the card
+function setText(whichSide, index) {
+    //stores text content for all home cards
+    const storedContent = [
+        {   
+            card: "one",
+            titleContent:"Our treat to you",
+            textContent: "Join Butterfly Coffee Rewards and savor our gift to you: a free drink with qualifying purchase during your first week. Valid for one-time use.*",
+            btnContent: "Join now",
+        },
+    
+        {   
+            card: "two",
+            titleContent: "Sunny-day essentials",
+            textContent: "Flavorful creations sure to brighten any summer day.",
+            btnContent: "Order now",
+        },
+    
+        {   
+            card: "three",
+            titleContent: "Here's an A+ gift",
+            textContent: "Celebrate back to school by sending your favorite students, parents and school staff members a Butterfly Coffee eGift.",
+            btnContent: "Send an eGift",
+        },
+    
+        {   
+            card: "four",
+            titleContent: "Personal cups for good",
+            textContent: "Your choice is a positive and responsible one-because bringing your clean reusable cup helps our planet.",
+            btnContent: "Learn more",
+        },
+    ];
+
     const h2 = document.createElement("h2");
-    h2.textContent = titleContent;
+    h2.textContent = storedContent[index].titleContent;
+
     const textDiv = document.createElement("div");
-    textDiv.textContent = textContent;
+    textDiv.textContent = storedContent[index].textContent;
+
     const btn = document.createElement("button");
-    btn.textContent = btnContent;
+    btn.textContent = storedContent[index].btnContent;
 
     const childDiv = document.createElement("div");
     childDiv.classList.add("card-text");
@@ -97,22 +102,21 @@ function setText(div, titleContent, textContent, btnContent) {
     childDiv.appendChild(textDiv);
     childDiv.appendChild(btn);
 
-    div.appendChild(childDiv);
-};
+    whichSide.appendChild(childDiv);
+}
 
-function getImage(div, number) {
+//Takes in the left or right div from the parent card div, and assigns image based on which card it is
+function getImage(whichSide, number, sourceImage) {
     const image = document.createElement("img");
     image.classList.add("img", `img-${number}`)
+    image.src = sourceImage;
 
-    if(number == "one") {
-        image.src = cardOneImage;
-    } else if(number == "two"){
-        image.src = cardTwoImage;
-    } else if(number == "three") {
-        image.src = cardThreeImage;
-    } else if(number == "four") {
-        image.src = cardFourImage;
-    };
+    whichSide.appendChild(image);
+}
 
-    div.appendChild(image);
+
+function createDivWithTwoClasses(classOne, classTwo) {
+    const div = document.createElement("div");
+    div.classList.add(classOne, classTwo);
+    return div;
 }

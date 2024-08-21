@@ -3,13 +3,13 @@ import { loadHomeContent } from "./greeting";
 import { loadMenuContent } from "./menu";
 import { loadContactContent } from "./contact";
 
-
+const content = document.querySelector("#content");
 const homeBtn = document.querySelector(".btn-home");
 const menuBtn = document.querySelector(".btn-menu");
 const contactBtn = document.querySelector(".btn-contact");
 
 //Loads the home page
-window.addEventListener("load", loadHomeContent());
+window.addEventListener("load", loadHomeContent(content));
 
 
 //3 event listeners will toggle content
@@ -34,7 +34,7 @@ homeBtn.addEventListener("click", () => {
     clearDom();
 
     //loads the home page
-    loadHomeContent();
+    loadHomeContent(content);
 });
 
 function clearDom() {
