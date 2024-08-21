@@ -10,15 +10,15 @@ export function loadHomeContent(content) {
     const containerHome = createDivWithTwoClasses("container", "container-home");
 
     //Home page content consists of four cards
-    const one = makeCard("one");
-    const two = makeCard("two");
-    const three = makeCard("three");
-    const four = makeCard("four");
+    const cardOne = makeCard("one");
+    const cardTwo = makeCard("two");
+    const cardThree = makeCard("three");
+    const cardFour = makeCard("four");
 
-    containerHome.appendChild(one);
-    containerHome.appendChild(two);
-    containerHome.appendChild(three);
-    containerHome.appendChild(four);
+    containerHome.appendChild(cardOne);
+    containerHome.appendChild(cardTwo);
+    containerHome.appendChild(cardThree);
+    containerHome.appendChild(cardFour);
 
     //content is referenced from index.js - the div that houses the live page content
     content.appendChild(containerHome);
