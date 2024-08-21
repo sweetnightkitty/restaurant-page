@@ -20,7 +20,7 @@ export function loadHomeContent(content) {
     containerHome.appendChild(cardTwo);
     containerHome.appendChild(cardThree);
     containerHome.appendChild(cardFour);
-
+    
     //content is referenced from index.js - the div that houses the live page content
     content.appendChild(containerHome);
 };
