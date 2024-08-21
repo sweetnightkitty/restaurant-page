@@ -18,7 +18,7 @@ menuBtn.addEventListener("click", () => {
     clearDom();
 
     //loads the menu page
-    loadMenuContent();
+    loadMenuContent(content);
 });
 
 contactBtn.addEventListener("click", () => {
@@ -26,7 +26,7 @@ contactBtn.addEventListener("click", () => {
     clearDom();
 
     //loads the contact page
-    loadContactContent();
+    loadContactContent(content);
 });
 
 homeBtn.addEventListener("click", () => {
@@ -38,8 +38,6 @@ homeBtn.addEventListener("click", () => {
 });
 
 function clearDom() {
-    const content = document.querySelector("#content");
-
     //selects whatever container is loaded (home, menu or contact)
     const container= document.querySelector(".container");
 

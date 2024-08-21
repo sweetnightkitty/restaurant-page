@@ -1,7 +1,5 @@
-export function loadContactContent() {
-    //content is the div that houses page content
-    const content = document.querySelector("#content");
-
+export function loadContactContent(content) {
+    
     //Create container div that houses all contact content
     const container = document.createElement("div");
     container.classList.add("container", "container-contact");
