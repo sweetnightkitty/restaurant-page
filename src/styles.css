@@ -1,10 +1,12 @@
 :root {
     --colorGreenAccentHsl: 158 100% 23%;
     --colorGreenBgd: #006241;
+    --colorGreenHighlight: rgba(0, 0, 0, 0.016);
     --colorPurpleBgd:#A3029A;
     --colorYellowBgd: #D6E342;
     --colorLgtGreenBgd: #97D8B1;
     --colorDarkFont: #1E3932;
+    --halfViewWidth: calc(vw / 2);
 }
 
 * {
@@ -39,7 +41,7 @@ nav {
     align-items: center;
 }
 
-.btn {
+.btn-home, .btn-contact, .btn-menu {
     background-color: white;
     border: none;
     font-family: "sodo-sans-bold";
@@ -51,6 +53,7 @@ nav {
 .btn:hover {
     color: hsl(var(--colorGreenAccentHsl));
 }
+
 
 .img-logo {
     width: 50px;
@@ -74,17 +77,25 @@ h1 {
     font-family: "sodo-sans-bold";
 }
 
+.container-home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+}
 .card {
     display: flex;
-    border: 1px solid black;
     flex: 1;
     font-family: "sodo-sans-regular";
     font-size: 19px;
 }
 
 .card-left, .card-right {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+
 
 
 .card-one {
@@ -107,6 +118,50 @@ h1 {
     color: var(--colorDarkFont);
 }
 
+.card-one>.card-right, .card-three>.card-right, .card-two>.card-left, .card-four>.card-left {
+    padding: 32px 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2.4rem;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-text>h2 {
+    margin-bottom: 24px;
+    font-size: 50px;
+}
+
+.card-text>button {
+    margin-top: 32px;
+    padding: 7px 16px;
+    background-color: inherit;
+    color: var(--colorDarkFont);
+    border: 1px solid var(--colorDarkFont);
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: "sodo-sans-regular";
+    font-weight: 600;
+}
+
+.card-one button, .card-two button {
+    color: white;
+    border: 1px solid white;
+}
+
+
+/* margins: below h2 32, above button 24*/
+
+.card-one>.card-left, .card-three>.card-left, .card-two>.card-right, .card-four>.card-right {
+    max-width: 50%;
+}
 
 footer {
     font-family: "sodo-sans-regular";
