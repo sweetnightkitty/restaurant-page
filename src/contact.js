@@ -1,8 +1,9 @@
+import { createDivWithTwoClasses } from "./index.js";
+
 export function loadContactContent(content) {
 
-    //Create container div that houses all contact content
-    const containerContact = document.createElement("div");
-    containerContact.classList.add("container", "container-contact");
+    //Houses all contact content
+    const containerContact = createDivWithTwoClasses("container", "container-contact");
 
     //Creates h1
     const h1 = document.createElement("h1");

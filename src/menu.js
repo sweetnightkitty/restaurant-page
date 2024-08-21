@@ -1,7 +1,8 @@
+import { createDivWithTwoClasses } from "./index.js";
+
 export function loadMenuContent(content) {
     //Create container div that houses all menu content
-    const containerMenu = document.createElement("div");
-    containerMenu.classList.add("container", "container-menu");
+    const containerMenu = createDivWithTwoClasses("container", "container-menu");
 
     //Creates h1
     const h1 = document.createElement("h1");
