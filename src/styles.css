@@ -1,5 +1,10 @@
 :root {
     --colorGreenAccentHsl: 158 100% 23%;
+    --colorGreenBgd: #006241;
+    --colorPurpleBgd:#A3029A;
+    --colorYellowBgd: #D6E342;
+    --colorLgtGreenBgd: #97D8B1;
+    --colorDarkFont: #1E3932;
 }
 
 * {
@@ -64,14 +69,45 @@ nav {
 
 }
 
+
 h1 {
     font-family: "sodo-sans-bold";
 }
 
-.box {
+.card {
     display: flex;
     border: 1px solid black;
+    flex: 1;
+    font-family: "sodo-sans-regular";
+    font-size: 19px;
 }
+
+.card-left, .card-right {
+    margin: 10px;
+}
+
+
+.card-one {
+    background-color: var(--colorGreenBgd);
+    color: white;
+}
+
+.card-two {
+    background-color: var(--colorPurpleBgd);
+    color: white;
+}
+
+.card-three {
+    background-color: var(--colorYellowBgd);
+    color: var(--colorDarkFont);
+}
+
+.card-four {
+    background-color: var(--colorLgtGreenBgd);
+    color: var(--colorDarkFont);
+}
+
+
 footer {
     font-family: "sodo-sans-regular";
     display: flex;

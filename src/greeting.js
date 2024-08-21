@@ -27,24 +27,53 @@ export function loadHomeContent() {
     container.appendChild(image);
     container.appendChild(div);
 
-    //gets first box
-    const boxOne = getBoxOne();
-    container.appendChild(boxOne);
+    //Make Box One
+    const one = makeBox("one");
+    const two = makeBox("two");
+    const three = makeBox("three");
+    const four = makeBox("four");
 
+
+    container.appendChild(one);
+    container.appendChild(two);
+    container.appendChild(three);
+    container.appendChild(four);
 
     //Add container to the content div
     content.appendChild(container);
-}
+};
 
-//May need to refactor this to make content load in the correct place and set up flexbox
-//Turn into a factory? that returns object of div, left and right
-function makeBox() {
+//Creates content box
+function makeBox(number) {
     const div = document.createElement("div");
-    const left = document.createElement("div");
-    const right = left;
+    div.classList.add("card",`card-${number}`);
 
-    left.classList.add("left-content");
-    right.classList.add("right-content");
+    const left = document.createElement("div");
+    left.classList.add("card", "card-left");
+
+    const right = document.createElement("div");
+    right.classList.add("card", "card-right");
+
+    //logic to know which side to add text to
+    if(number == "one" || number == "three") {
+        //text goes on right
+        if(number == "one") {
+            const textContent = "Our treat to you";
+            setText(right, textContent);
+        } else if(number == "three") {
+            const textContent = "Here's an A+ gift";
+            setText(right, textContent);
+        };
+    } else if(number == "two" || number == "four") {
+        //text goes on left
+        if(number == "two") {
+            const textContent = "Sunny-day essentials";
+            setText(left, textContent);
+        } else if(number == "four") {
+            const textContent = "Personal cups for good";
+            setText(left, textContent);
+        };
+    };
 
     div.appendChild(left);
     div.appendChild(right);
@@ -53,22 +82,7 @@ function makeBox() {
 
 }
 
-
-function getBoxOne () {
-
-    const boxOne = makeBox()
-    boxOne.classList.add("box", "box-one");
-
-    //content is adding to div box but not to right content like intended
-    const h2 = document.createElement("h2");
-    h2.textContent = "Our treat to you"
-
-    const text = document.createElement("div");
-    text.classList.add("text");
-    text.textContent = "Join Butterfly Coffee Rewards and savor our gift to you: a free drink with qualifying purchase during your first week. Valid for one-time use.*";
-
-    boxOne.appendChild(h2);
-    boxOne.appendChild(text);
-
-    return boxOne;
-}
+//Generate text
+function setText(div, textContent) {
+    div.textContent = textContent;
+};
