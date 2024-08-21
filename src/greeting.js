@@ -1,5 +1,9 @@
 //import img
 import sandwich from "./sandwich.jpeg";
+import boxOneImage from "./box-one-image.jpeg";
+import boxTwoImage from "./box-two-image.jpeg";
+import boxThreeImage from "./box-three-image.jpeg";
+import boxFourImage from "./box-four-image.jpeg";
 
 export function loadHomeContent() {
     const content = document.querySelector("#content");
@@ -7,25 +11,6 @@ export function loadHomeContent() {
     //Create container div that houses all home content
     const container = document.createElement("div");
     container.classList.add("container", "container-home");
-
-    //Create h1
-    const h1 = document.createElement("h1");
-    h1.textContent = "Butterfly Coffee Company";
-
-    //Create img
-    const image = document.createElement("img");
-    image.classList.add("img", "img-home");
-    image.src = sandwich;
-
-    //Create div text
-    const div = document.createElement("div");
-    div.classList.add("text");
-    div.textContent = "The funny thing is Sara hate's sandwhiches so that explains all the sass.";
-
-    //Add h1, img and div text in order to container-home
-    container.appendChild(h1);
-    container.appendChild(image);
-    container.appendChild(div);
 
     //Make Box One
     const one = makeBox("one");
@@ -58,20 +43,32 @@ function makeBox(number) {
     if(number == "one" || number == "three") {
         //text goes on right
         if(number == "one") {
-            const textContent = "Our treat to you";
-            setText(right, textContent);
+            const titleContent = "Our treat to you"
+            const textContent = "Join Butterfly Coffee Rewards and savor our gift to you: a free drink with qualifying purchase during your first week. Valid for one-time use.*";
+            const btnContent = "Join now";
+            setText(right, titleContent, textContent, btnContent);
+            getImage(left, number);
         } else if(number == "three") {
-            const textContent = "Here's an A+ gift";
-            setText(right, textContent);
+            const titleContent = "Here's an A+ gift";
+            const textContent = "Celebrate back to school by sending your favorite students, parents and school staff members a Butterfly Coffee eGift.";
+            const btnContent = "Send an eGift";
+            setText(right, titleContent, textContent, btnContent);
+            getImage(left, number);
         };
     } else if(number == "two" || number == "four") {
         //text goes on left
         if(number == "two") {
-            const textContent = "Sunny-day essentials";
-            setText(left, textContent);
+            const titleContent = "Sunny-day essentials";
+            const textContent = "Flavorful creations sure to brighten any summer day.";
+            const btnContent = "Order now";
+            setText(left, titleContent, textContent, btnContent);
+            getImage(right, number);
         } else if(number == "four") {
-            const textContent = "Personal cups for good";
-            setText(left, textContent);
+            const titleContent = "Personal cups for good";
+            const textContent = "Your choice is a positive and responsible one-because bringing your clean reusable cup helps our planet.";
+            const btnContent = "Learn more";
+            setText(left, titleContent, textContent, btnContent);
+            getImage(right, number);
         };
     };
 
@@ -83,6 +80,38 @@ function makeBox(number) {
 }
 
 //Generate text
-function setText(div, textContent) {
-    div.textContent = textContent;
+function setText(div, titleContent, textContent, btnContent) {
+    //create h2
+    const h2 = document.createElement("h2");
+    h2.textContent = titleContent;
+    const textDiv = document.createElement("div");
+    textDiv.textContent = textContent;
+    const btn = document.createElement("button");
+    btn.textContent = btnContent;
+
+    const childDiv = document.createElement("div");
+    childDiv.classList.add("card-text");
+
+    childDiv.appendChild(h2);
+    childDiv.appendChild(textDiv);
+    childDiv.appendChild(btn);
+
+    div.appendChild(childDiv);
 };
+
+function getImage(div, number) {
+    const image = document.createElement("img");
+    image.classList.add("img", `img-${number}`)
+
+    if(number == "one") {
+        image.src = boxOneImage;
+    } else if(number == "two"){
+        image.src = boxTwoImage;
+    } else if(number == "three") {
+        image.src = boxThreeImage;
+    } else if(number == "four") {
+        image.src = boxFourImage;
+    };
+
+    div.appendChild(image);
+}
