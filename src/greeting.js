@@ -8,8 +8,8 @@ export function loadHomeContent() {
     const content = document.querySelector("#content");
 
     //Create container div that houses all home content
-    const container = document.createElement("div");
-    container.classList.add("container", "container-home");
+    const containerHome = document.createElement("div");
+    containerHome.classList.add("container", "container-home");
 
     //Make Home cards
     const one = makeCard("one");
@@ -18,13 +18,13 @@ export function loadHomeContent() {
     const four = makeCard("four");
 
     //Add home cards to the home container
-    container.appendChild(one);
-    container.appendChild(two);
-    container.appendChild(three);
-    container.appendChild(four);
+    containerHome.appendChild(one);
+    containerHome.appendChild(two);
+    containerHome.appendChild(three);
+    containerHome.appendChild(four);
 
-    //Add container to the content div
-    content.appendChild(container);
+    //Add home container to the content div
+    content.appendChild(containerHome);
 };
 
 //Creates Home cards and populates it with appropriate content
