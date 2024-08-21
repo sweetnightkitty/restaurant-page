@@ -3,6 +3,7 @@ import cardOneImage from "./box-one-image.jpeg";
 import cardTwoImage from "./box-two-image.jpeg";
 import cardThreeImage from "./box-three-image.jpeg";
 import cardFourImage from "./box-four-image.jpeg";
+import { createDivWithTwoClasses } from "./index.js";
 
 export function loadHomeContent(content) {
 
@@ -112,11 +113,4 @@ function getImage(whichSide, number, sourceImage) {
     image.src = sourceImage;
 
     whichSide.appendChild(image);
-}
-
-
-function createDivWithTwoClasses(classOne, classTwo) {
-    const div = document.createElement("div");
-    div.classList.add(classOne, classTwo);
-    return div;
 }

@@ -44,3 +44,9 @@ function clearDom() {
     //removes current container
     content.removeChild(container);
 }
+
+export function createDivWithTwoClasses(classOne, classTwo) {
+    const div = document.createElement("div");
+    div.classList.add(classOne, classTwo);
+    return div;
+}
