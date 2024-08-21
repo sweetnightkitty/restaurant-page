@@ -1,8 +1,8 @@
 //import img
-import boxOneImage from "./box-one-image.jpeg";
-import boxTwoImage from "./box-two-image.jpeg";
-import boxThreeImage from "./box-three-image.jpeg";
-import boxFourImage from "./box-four-image.jpeg";
+import cardOneImage from "./box-one-image.jpeg";
+import cardTwoImage from "./box-two-image.jpeg";
+import cardThreeImage from "./box-three-image.jpeg";
+import cardFourImage from "./box-four-image.jpeg";
 
 export function loadHomeContent() {
     const content = document.querySelector("#content");
@@ -11,13 +11,13 @@ export function loadHomeContent() {
     const container = document.createElement("div");
     container.classList.add("container", "container-home");
 
-    //Make Box One
-    const one = makeBox("one");
-    const two = makeBox("two");
-    const three = makeBox("three");
-    const four = makeBox("four");
+    //Make Home cards
+    const one = makeCard("one");
+    const two = makeCard("two");
+    const three = makeCard("three");
+    const four = makeCard("four");
 
-
+    //Add home cards to the home container
     container.appendChild(one);
     container.appendChild(two);
     container.appendChild(three);
@@ -27,8 +27,10 @@ export function loadHomeContent() {
     content.appendChild(container);
 };
 
-//Creates content box
-function makeBox(number) {
+//Creates Home cards and populates it with appropriate content
+function makeCard(number) {
+
+
     const div = document.createElement("div");
     div.classList.add("card",`card-${number}`);
 
@@ -103,13 +105,13 @@ function getImage(div, number) {
     image.classList.add("img", `img-${number}`)
 
     if(number == "one") {
-        image.src = boxOneImage;
+        image.src = cardOneImage;
     } else if(number == "two"){
-        image.src = boxTwoImage;
+        image.src = cardTwoImage;
     } else if(number == "three") {
-        image.src = boxThreeImage;
+        image.src = cardThreeImage;
     } else if(number == "four") {
-        image.src = boxFourImage;
+        image.src = cardFourImage;
     };
 
     div.appendChild(image);
