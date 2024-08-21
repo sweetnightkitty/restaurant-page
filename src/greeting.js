@@ -1,5 +1,4 @@
 //import img
-import sandwich from "./sandwich.jpeg";
 import boxOneImage from "./box-one-image.jpeg";
 import boxTwoImage from "./box-two-image.jpeg";
 import boxThreeImage from "./box-three-image.jpeg";
