@@ -14,7 +14,7 @@ export function loadMenuContent(content) {
     //Creates all content for the right column
     const columnRight = createDivWithTwoClasses("column", "column-right");
     const h1 = document.createElement("h1");
-    h1.textContent = "Menu?";
+    h1.textContent = "Menu";
 
     //Creates the full menu on the right column
     const fullPhotoMenu = createDivWithTwoClasses("full-photo-menu");
