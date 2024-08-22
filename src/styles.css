@@ -8,6 +8,8 @@
     --colorDarkFont: #1E3932;
     --halfViewWidth: calc(vw / 2);
     --outerGutterMedium: 2.4rem;
+    --drinkItemSize: 148px;
+    --photoSize: 80px;
 }
 
 * {
@@ -175,6 +177,53 @@ footer {
 
 
 /* MENU PAGE CONTENT */
+.container-menu {
+    display: flex;
+    align-items: baseline;
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+}
+.column-left {
+    min-width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-right {
+    padding-left: 0px;
+    padding-right: 50px;
+    border: 1px solid black;
+}
+
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+/* Sets layout on all photo menu items */
+.photo-menu-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.photo-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+
+
 
 
 /* CONTACT PAGE CONTENT */
