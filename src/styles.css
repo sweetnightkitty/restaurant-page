@@ -9,7 +9,7 @@
     --halfViewWidth: calc(vw / 2);
     --outerGutterMedium: 2.4rem;
     --drinkItemSize: 148px;
-    --photoSize: 80px;
+    --photoSize: 125px;
 }
 
 * {
@@ -184,22 +184,35 @@ footer {
     padding-bottom: 4.8rem;
 }
 .column-left {
-    min-width: 15vw;
+    max-width: 13vw;
+    padding-left: 131px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .nav-menu {
+    height: 100%;;
+}
+
+.menu-main {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
 .column-right {
-    padding-left: 0px;
-    padding-right: 50px;
-    border: 1px solid black;
+    padding-left: 95px;
+    padding-right: 95px;
+}
+
+.column-right h1 {
+    padding-bottom: 48px;
+}
+
+.photo-menu-title {
+    padding-bottom: 16px;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2); /* 2 and - 2 cancel out rest of box*/
 }
 
 .sub-menu {
@@ -208,18 +221,32 @@ footer {
     padding: 10px 0;
 }
 
+.sub-menu-title {
+    font-size: 19px;
+    font-family: "sodo-sans-bold";
+}
+
+.menu-item {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "sodo-sans-regular";
+    list-style-type: none;
+}
+
 /* Sets layout on all photo menu items */
 .photo-menu-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    margin-top: 32px;
+    margin-bottom: 50px;
 }
 
 .photo-menu-item {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    border: 1px solid black;
+    font-size: 19px;
 }
 
 

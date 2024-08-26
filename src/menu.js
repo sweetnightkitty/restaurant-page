@@ -95,7 +95,7 @@ function createSubMenu(number) {
     //Assigns the Title which is the first item in the array
     subMenuTitle.textContent = currentMenuArray[0];
 
-    const subMenuItems = createElementWithTwoClasses("ul");
+    const subMenuItems = createElementWithTwoClasses("ul", "sub-menu-item", `sub-menu-item-${number}`);
 
     //Generates all the menu items and appends them to sub menu items ul
     for(let i = 1; i < currentMenuArray.length; i++) {
